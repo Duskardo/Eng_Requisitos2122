@@ -17,20 +17,26 @@
 	$cc_number = $_REQUEST['cc_number'];
 	$password = $_REQUEST['password'];
 
-	if (!verifyUsername($username)){
-		echo "Nome de utilizador em uso!";
+	if (!verifyUsername_availability($username)){
+		?>
+		<p>Nome de utilizador em uso!</p>
+		<?php
 	}
 	
-	if (!verifyEmail($email)){
-		echo "Email em uso!";
+	if (!verifyEmail_availability($email)){
+		?>
+		<p>Email em uso!</p>
+		<?php
 	}
 	
 	if (!verifyRealName($real_name)){
 		echo "Nome em uso!";
 	}
 	
-	if (!verifyCc_number($cc_number)){
-		echo "Cartão de cidadão em uso!";
+	if (!verifyCc_number_availability($cc_number)){
+		?>
+		<p>Cartão de cidadão em uso!</p>
+		<?php
 	}
 	
 	if (!verifyPassword($password)){

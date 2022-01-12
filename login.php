@@ -17,5 +17,6 @@
 	</form>
 	
 	<a href='register.php'>Registar nova conta</a>
+	
 </body>
 </html>
