@@ -16,36 +16,43 @@
 	$real_name = $_REQUEST['real_name'];
 	$cc_number = $_REQUEST['cc_number'];
 	$password = $_REQUEST['password'];
+	
+	$valido = true;
 
 	if (!verifyUsername_availability($username)){
-		?>
-		<p>Nome de utilizador em uso!</p>
-		<?php
+		
+		echo "<p>Nome de utilizador em uso!</p>";
+		$valido=false;		
 	}
 	
 	if (!verifyEmail_availability($email)){
-		?>
-		<p>Email em uso!</p>
-		<?php
+		
+		echo "<p>Email em uso!</p>";
+		$valido=false;
 	}
 	
 	if (!verifyRealName($real_name)){
 		echo "Nome em uso!";
+		$valido=false;
 	}
 	
 	if (!verifyCc_number_availability($cc_number)){
-		?>
-		<p>Cartão de cidadão em uso!</p>
-		<?php
+		
+		echo "<p>Cartão de cidadão em uso!</p>";
+		$valido=false;
 	}
 	
 	if (!verifyPassword($password)){
-		echo "Password inválida!";
+		echo "<p>Password inválida!</p>";
+		$valido=false;
 	}
 	
-	insertUser($username,$email,$real_name,$cc_number,$password);
+	if ($valido){
+		insertUser($username,$email,$real_name,$cc_number,$password);
+		echo "<p>Conta criada com sucesso!</p>";
+	}
 	
-	
+	back();
 	?>
 
 </body>

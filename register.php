@@ -7,6 +7,9 @@
 
 <body>
 	<h4>Registo de conta</h4>
+	
+	<?php require_once("common.php"); ?>
+
 	<form method='POST' action='verify_register.php' class=''>
 		
 		<!-- <label for='username'><b>Nome de utilizador</b></label> -->
@@ -19,6 +22,5 @@
 		<input type='submit' value='Criar conta'>
 	</form>
 
-	<?php require_once("common.php"); ?>
 </body>
 </html>
