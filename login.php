@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(isset($_POST['username'])){
+    $_SESSION['username']=$_POST['username'];
+}
+?>
 <html>
 <title>Login</title>
 <head>

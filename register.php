@@ -10,7 +10,7 @@
 	
 	<?php require_once("common.php"); ?>
 
-	<form method='POST' action='verify_register.php' class=''>
+	<form method='POST' action='verify_register.php' action='homepage.php' class=''>
 		
 		<!-- <label for='username'><b>Nome de utilizador</b></label> -->
 		<input type='text' name='username' placeholder='Nome de utilizador' required><br>

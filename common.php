@@ -1,7 +1,7 @@
 
 <?php
 
-$GLOBALS['db'] = mysqli_connect('localhost','root','','eng_req');
+$GLOBALS['db'] = mysqli_connect('localhost','root','','phpmyadmin');
 
 
 
@@ -80,4 +80,16 @@ function verifyLogin($username,$password){
 	}
 }
 
+function insertReview($userId,$review,$quantity){
+    $insert_review_query="INSERT INTO reviews(id_users,	avaliacao_qual,	review_qual) values( '$userId','$quantity','$review')";
+    if(!mysqli_query($GLOBALS['db'],$insert_review_query)){
+        echo mysqli_error($GLOBALS['db']);
+    }
+}
+
+function getUserID($username){
+    $user_id_query="SELECT id_user FROM utilizadores where username='$username'";
+    $user_id_result=mysqli_query($GLOBALS['db'],$user_id_query);
+    return $user_id_query;
+}
 ?>
